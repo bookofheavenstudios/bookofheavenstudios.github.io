@@ -160,3 +160,28 @@ section.chapter, section.intro, h2[id], [id] {
     scroll-margin-top: 8.5rem;
   }
 }
+
+/* Study charts, maps, and diagrams */
+section.figures .note { margin: 0 0 1.2rem; }
+figure.study-fig {
+  margin: 1.5rem 0 2rem;
+  padding: 0;
+}
+figure.study-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+figure.study-fig figcaption {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin-top: 0.45rem;
+}
+
+figure.study-fig, section.figures {
+  scroll-margin-top: 7.5rem;
+}
+
