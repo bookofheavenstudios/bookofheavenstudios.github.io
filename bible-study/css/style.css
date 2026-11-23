@@ -1,0 +1,162 @@
+/* Jim's Bible Study — sample. Off-white parchment, not plain white. */
+:root {
+  --paper: #f4ecd8;
+  --paper-deep: #efe3c8;
+  --ink: #2b2418;
+  --ink-soft: #4e4536;
+  --ink-faint: #6d6250;
+  --rule: #d7c8a8;
+  --accent: #6a4b28;
+  --accent-soft: #8a6a42;
+  --link: #5a3f20;
+  --verse-bg: rgba(255, 252, 245, 0.55);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Source Serif 4", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  background-color: var(--paper-deep);
+  background-image:
+    radial-gradient(ellipse at 50% -10%, #f8f1df 0%, transparent 55%),
+    repeating-linear-gradient(
+      180deg,
+      rgba(90, 60, 20, 0.018) 0px,
+      rgba(90, 60, 20, 0.018) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+  min-height: 100%;
+}
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { color: var(--accent); }
+.wrap { width: min(42rem, calc(100% - 2rem)); margin: 0 auto; padding: 0 0 4rem; }
+header.site {
+  border-bottom: 1px solid var(--rule);
+  background: rgba(244, 236, 216, 0.92);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(6px);
+}
+header.site .wrap {
+  padding: 0.7rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.brand {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.brand span { display: block; font-variant: normal; letter-spacing: 0; font-size: 0.75rem; color: var(--ink-faint); }
+nav.chapters { display: flex; flex-wrap: wrap; gap: 0.35rem 0.7rem; font-size: 0.9rem; }
+nav.chapters a { text-decoration: none; color: var(--ink-soft); padding: 0.15rem 0.35rem; border-radius: 3px; }
+nav.chapters a:hover, nav.chapters a[aria-current="page"] { background: rgba(106, 75, 40, 0.1); color: var(--accent); }
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.25;
+  margin: 2rem 0 0.4rem;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+.lede { color: var(--ink-soft); margin: 0 0 1.8rem; font-size: 0.98rem; }
+h2 {
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--accent);
+  margin: 2.4rem 0 0.8rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--rule);
+}
+h3 { font-weight: 600; font-size: 1.08rem; margin: 1.4rem 0 0.5rem; color: var(--ink); }
+.intro p, .chapter-text p, .question-block p { margin: 0 0 0.85rem; }
+.intro .date { color: var(--ink-faint); font-size: 0.95rem; margin-top: 0; }
+.toc { list-style: none; padding: 0; margin: 0 0 1.4rem; color: var(--ink-soft); }
+.toc li { margin: 0; }
+.section-head { margin-top: 1.5rem; font-weight: 600; }
+sup { font-size: 0.7em; line-height: 0; }
+.kjv-chapter {
+  background: var(--verse-bg);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1rem 1.1rem 0.6rem;
+  margin: 0 0 1.6rem;
+}
+.kjv-chapter .v { display: block; margin: 0 0 0.45rem; text-indent: 0; }
+.kjv-chapter .vn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-soft);
+  margin-right: 0.35rem;
+  font-variant-numeric: lining-nums;
+}
+.packet-label { color: var(--ink-faint); font-size: 0.92rem; margin: 0 0 1rem; }
+ol.questions { list-style: none; padding: 0; margin: 0; }
+.question-block {
+  margin: 0 0 1.5rem;
+  padding: 0 0 1.25rem;
+  border-bottom: 1px solid rgba(215, 200, 168, 0.7);
+}
+.question-block:last-child { border-bottom: 0; }
+.q-num { font-weight: 600; color: var(--accent); margin-right: 0.3rem; }
+.q-text { }
+.paired-verse {
+  margin: 0.55rem 0 0.4rem;
+  padding: 0.65rem 0.8rem;
+  background: var(--verse-bg);
+  border-left: 3px solid var(--rule);
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+.paired-verse .ref { font-weight: 600; color: var(--accent-soft); font-size: 0.88rem; display: block; margin-bottom: 0.25rem; }
+.verse-needed { font-size: 0.92rem; color: var(--ink-faint); font-style: italic; margin: 0.4rem 0; }
+.answer {
+  margin: 0.5rem 0 0;
+  color: var(--ink-faint);
+  font-size: 0.95rem;
+}
+.answer .blank {
+  display: block;
+  margin-top: 0.2rem;
+  border-bottom: 1px solid var(--rule);
+  min-height: 1.5rem;
+}
+footer.site {
+  width: min(42rem, calc(100% - 2rem));
+  margin: 0 auto 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+}
+/* Index */
+.book-list { list-style: none; padding: 0; columns: 2; column-gap: 2rem; margin: 1.5rem 0; }
+.book-list li { break-inside: avoid; margin: 0 0 0.35rem; }
+.book-list a { font-weight: 600; }
+.coming { color: var(--ink-faint); }
+.note { font-size: 0.95rem; color: var(--ink-soft); }
+@media (max-width: 640px) {
+  body { font-size: 1.05rem; }
+  h1 { font-size: 1.65rem; }
+  .book-list { columns: 1; }
+  .wrap { width: min(42rem, calc(100% - 1.5rem)); }
+}
+
+section.chapter, section.intro, h2[id], [id] {
+  scroll-margin-top: 6.5rem;
+}
+@media (max-width: 640px) {
+  section.chapter, section.intro, [id] {
+    scroll-margin-top: 8.5rem;
+  }
+}
